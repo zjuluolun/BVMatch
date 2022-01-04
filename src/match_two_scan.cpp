@@ -32,7 +32,7 @@ int readPointCloud(pcl::PointCloud<pcl::PointXYZ> &point_cloud, const std::strin
   std::ifstream binfile(filename.c_str(),std::ios::binary);
   if(!binfile)
   {
-    throw std::runtime_error("file cannot open");
+    throw std::runtime_error("file \"" +filename+ "\" cannot open");
     return -1;
   }
   else
@@ -269,6 +269,15 @@ int main(int argc, char** argv)
     //read point clouds
     readPointCloud(point_cloud1, img1_path);
     readPointCloud(point_cloud2, img2_path);
+
+    //apply rotation transform to test the rotation invariance
+    float rotation_angle=137.0/180*CV_PI;
+    for(int i=0; i<point_cloud1.size(); i++)
+    {
+        pcl::PointXYZ tmp = point_cloud1[i];
+        point_cloud1[i].x = cos(rotation_angle)*tmp.x + sin(rotation_angle)*tmp.y;
+        point_cloud1[i].y = -sin(rotation_angle)*tmp.x + cos(rotation_angle)*tmp.y;
+    }
 
     Mat img1, img2;
     int max_x1,max_y2,max_x2,max_y1;  //used for localizing the center of the images
