@@ -11,6 +11,7 @@ BVMatch is a LiDAR-based place recognition method that is capable of estimating 
 
 ## Example usage
 Go to the "build" directory, run 
+
 `cmake .. && make` 
 `./match_two_scan ../data/scan1.bin ../data/scan2.bin`  
 
@@ -34,5 +35,7 @@ Please cite this paper if you want to use it in your work,
 
 ## Contact
 Lun Luo
+
 Zhejiang University
+
 luolun@zju.edu.cn
