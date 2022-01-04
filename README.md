@@ -18,7 +18,7 @@ Go to the "build" directory, run
 
 You will see the matching result of two LiDAR scans of the Oxford RobotCar dataset,
 
-![](./imgs/match.png)
+![](./imgs/result.png)
 
 ## Citation
 Please cite this paper if you want to use it in your work,
