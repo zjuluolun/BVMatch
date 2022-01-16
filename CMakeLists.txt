@@ -22,3 +22,6 @@ include_directories(
 
 add_executable(match_two_scan src/match_two_scan.cpp) 
 target_link_libraries(match_two_scan ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBS} python2.7)
+
+add_executable(generate_descriptors src/generate_descriptors.cpp)    #change the verticle 
+target_link_libraries(generate_descriptors ${catkin_LIBRARIES} ${PCL_LIBRARIES} ${OpenCV_LIBS}  python2.7)

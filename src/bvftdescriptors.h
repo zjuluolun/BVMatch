@@ -687,7 +687,7 @@ BVFT detectBVFT(Mat img1)
     float max_metric = 0;
     KeyPointsFilter::removeDuplicated(keypoints_raw);
 
-    cout << "detected " << keypoints_raw.size() << " keypoints" << endl;
+    // cout << "detected " << keypoints_raw.size() << " keypoints" << endl;
 
     int patch_size=138;
     int patch_size_true = 96;
@@ -696,12 +696,12 @@ BVFT detectBVFT(Mat img1)
     //rm the keypoints at borders
     for (int i=0; i<keypoints_raw.size(); i++)
     {
-        bool at_border = (keypoints_raw[i].pt.x<patch_size/4*3 || keypoints_raw[i].pt.y<patch_size/4*3 || keypoints_raw[i].pt.x>img1.cols-patch_size/4*3 || keypoints_raw[i].pt.y>img1.rows-patch_size/4*3);
+        bool at_border = (keypoints_raw[i].pt.x<patch_size/2 || keypoints_raw[i].pt.y<patch_size/2 || keypoints_raw[i].pt.x>img1.cols-patch_size/2 || keypoints_raw[i].pt.y>img1.rows-patch_size/2);
         if(!at_border)
             keypoints.push_back(keypoints_raw[i]);
     }
 
-    cout << "keep " << keypoints.size() << " keypoints" << endl;
+    // cout << "keep " << keypoints.size() << " keypoints" << endl;
 
     //calculate log-gabor responses
     Mat CS[norient];
@@ -867,7 +867,7 @@ BVFT detectBVFT(Mat img1)
     chrono::duration<float> time_used = chrono::duration_cast<
     chrono::duration<float>>(t_end-t_start);
 
-    cout <<"----------------Elapsing time: "<< time_used.count()  << " seconds\n"<< endl;
+    // cout <<"----------------Elapsing time: "<< time_used.count()  << " seconds\n"<< endl;
 
     decriptors=decriptors.t();
     BVFT bvft(keypoints, decriptors);
