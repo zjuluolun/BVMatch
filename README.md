@@ -24,7 +24,7 @@ You will see the matching result of two LiDAR scans of the Oxford RobotCar datas
 
 ## Place Recognition Evaluation
 #### 1. Download datasets 
-Download the Oxford Robotcar dataset [here](https://pan.zju.edu.cn/share/055cb9be0d6715fddd195f5e25) (about 3.8GB). Extract the foler on the project directory. Go to the `scripts` directory and change the `root_path` in `config.py` to the dataset path.
+Download the Oxford Robotcar dataset [here](https://pan.zju.edu.cn/share/055cb9be0d6715fddd195f5e25) (about 3.8GB) or from [google drive](https://drive.google.com/file/d/15M0FIHKeWvsMC1IgGpV_uVRrFnitT6t4/view?usp=sharing). Extract the foler on the project directory. Go to the `scripts` directory and change the `root_path` in `config.py` to the dataset path.
 
 Note that all the following operations are under the `scripts` directory.
 
