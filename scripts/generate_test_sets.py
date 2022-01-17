@@ -23,7 +23,7 @@ def output_to_file(output, filename):
 	print("Done ", filename)
 
 
-def construct_query_and_database_sets(base_path, folders, pointcloud_fols, filename, p, output_name):
+def construct_query_and_database_sets(base_path, folders, pointcloud_fols, filename, output_name):
 	database_trees=[]
 	test_trees=[]
 	database_list=[]
@@ -108,4 +108,4 @@ for seq  in sequences:#len(all_folders)):
     		folders.append(seq)
 #folders=folders[0:3]
 print(folders)
-construct_query_and_database_sets(root_path, folders, "/pointclouds/", "pointcloud_locations_20m.csv", p_dict["oxford"], "oxford")
+construct_query_and_database_sets(root_path, folders, "/pointclouds/", "pointcloud_locations_20m.csv", "oxford")
