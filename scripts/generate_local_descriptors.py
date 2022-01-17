@@ -32,7 +32,7 @@ if __name__ == '__main__':
             os.system('mkdir '+desc_folder)
 
     
-    pool = Pool(10)  #thread pool
+    pool = Pool(4)  #thread pool
     for seq in sequences:
         pool.apply_async(generateSeqLocalDescriptors, args=(root_path+'/'+seq,))
 
