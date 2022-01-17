@@ -12,7 +12,11 @@ BVMatch is a LiDAR-based place recognition method that is capable of estimating 
 
 
 ## Example usage
-Go to the "build" directory, run 
+Just  run 
+
+`mkdir build`
+
+`cd build`
 
 `cmake .. && make` 
 
